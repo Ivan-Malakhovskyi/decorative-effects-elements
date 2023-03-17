@@ -23,6 +23,16 @@
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   --grad-hero: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7));
   --bgd-soc-color: #8e8f99;
+  --bgd-color-icon: #31d0aa;
+
+  --footer-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+  --portfolio-cards-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+
+  --portfolio-buttons-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 body {
   color: var(--main-text-color);
@@ -84,6 +94,7 @@ img {
 /*-------------- Логотип компанії ------------*/
 .page-header {
   border-bottom: 1px solid var(--footer-text-color);
+  box-shadow: var(--footer-shadow);
 }
 
 /* Шрифти */
@@ -310,7 +321,7 @@ img {
   width: 264px;
   height: 112px;
   margin-bottom: 8px;
-  outline: 1px solid tomato;
+  /* outline: 1px solid tomato; */
   background-color: var(--additional-background-color);
 }
 .icon-features {
@@ -332,7 +343,6 @@ img {
   padding-top: 120px;
 }
 .section-sec {
-  padding-top: 120px;
   padding-bottom: 120px;
 }
 .section-subject {
@@ -391,6 +401,7 @@ img {
   background-color: var(--main-bgrnd-color);
   border: 1px solid var(--footer-text-color);
   border-radius: 0px 0px 4px 4px;
+  box-shadow: var(--card-shadow-team);
 }
 .team-soc {
   margin-top: 8px;
@@ -398,7 +409,7 @@ img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  outline: 1px solid tomato;
+  /* outline: 1px solid tomato; */
   gap: 24px;
 }
 
@@ -412,7 +423,8 @@ img {
   border-radius: 50%;
   background-color: var(--accent-color);
 }
-.soc-link-ing:hover {
+.soc-link-ing:hover,
+.soc-link-ing:focus {
   background-color: var(--accent-page-color);
 }
 
@@ -425,32 +437,33 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 168px;
-  height: 88px;
 }
 
 .soc-list {
   display: flex;
-
-  outline: 1px solid tomato;
+  gap: 24px;
+  /* outline: 1px solid tomato; */
   width: 1128px;
   height: 88px;
-  gap: 24px;
 }
-.soc-item-list {
+.item-link {
   width: 168px;
   height: 88px;
-  border: 1px solid #8e8f99;
+  border: 1px solid var(--bgd-soc-color);
+  color: var(--bgd-soc-color);
   border-radius: 4px;
+}
+
+.item-link:hover,
+.item-link:focus {
+  border-color: var(--accent-page-color);
+  color: var(--accent-page-color);
 }
 .link-icon-list {
   width: 104px;
   height: 56px;
+  fill: currentColor;
 }
-.link-icon-list:hover {
-  color: var(--accent-page-color);
-}
-
 /*-------- Стилі для portfolio.html--------- */
 
 /* Елемент */
@@ -469,6 +482,10 @@ img {
   border: 1px solid var(--footer-text-color);
   background-color: var(--main-bgrnd-color);
   border-top: none;
+}
+.set-card:hover,
+.set-card:focus {
+  box-shadow: var(--portfolio-cards-shadow);
 }
 
 .portfolio-text {
@@ -514,7 +531,10 @@ img {
 .portfolio-btn {
   margin-bottom: 72px;
 }
-
+.portfolio-btn:hover,
+.portfolio-btn:focus {
+  box-shadow: var(--portfolio-buttons-shadow);
+}
 .button-hero:hover,
 .button-hero:focus {
   background-color: var(--accent-page-color);
@@ -566,6 +586,9 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
+.portfolio-list {
+  background: #ffffff;
+}
 
 /*------------------ Footer ---------------*/
 .footer {
@@ -588,6 +611,7 @@ img {
 .footer-logo {
   padding-top: 100px;
   padding-bottom: 100px;
+  /* outline: 1px solid red; */
 }
 
 .footer-studio {
@@ -600,16 +624,55 @@ img {
   max-width: 264px;
   margin: 0;
 }
-/* 
- На лі має бути без типовий колір в нашому випадку сірий
-.flkflk {
-  colorЖ сірий;
-  background-color: сірий;
+
+.footer-list {
+  display: flex;
+
+  /* outline: 1px solid tomato; */
+  gap: 24px;
 }
-.flkflk:hover {
-  color: var(--accent-page-color);
+.footer-subject {
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.02em;
+  color: var(--main-bgrnd-color);
+}
+.footer-top {
+  display: flex;
 }
 
-.iconn {
-  fill: currentColor;
-} */
+.footer-logo {
+  padding-right: 15px;
+  padding-left: 0;
+
+  margin-left: 0;
+  margin-right: 0;
+}
+.footer-soc {
+  padding-top: 100px;
+  padding-bottom: 132px;
+  margin: 0;
+  padding-left: 120px;
+  padding-right: 15px;
+}
+.footer-link {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--main-text-color);
+}
+.icon-ftr {
+  width: 24px;
+  height: 24px;
+}
+.footer-link:hover,
+.footer-link:focus {
+  background: var(--bgd-color-icon);
+}
